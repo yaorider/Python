@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock title %}</title>
+     <link rel="stylesheet" href="{% static 'css/index.css' %}"
+          crossorigin="anonymous">
+</head>
+<body>
+                {% block content %}
+                {% endblock %}
+</body>
+</html>

@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}電卓{% endblock title %}
+{% block content %}
+    <h1>djangoの電卓</h1>
+    <form method="post" action="calc">
+        {% csrf_token %}
+        <input type="hidden" name="squareHistoryNum" value="{{ squareHistoryNum }}">
+        <input type="hidden" name="pre" value="{{ pre }}">
+        <input type="hidden" name="history" value="{{ history }}">
+		<input type="hidden" name="median" value="{{ median }}">
+			<div>
+				<div className="status">Value: {{ answer }} </div>
+				<div className="status">History:{{ history }}</div>
+				<table>
+					<tr>
+						<td><button class="square" name="square" value="AC">AC</button></td>
+						<td><button class="square" name="square" value="+/-">+/-</button></td>
+						<td><button class="square" name="square" value="％">％</button></td>
+						<td><button class="square" name="square" value="÷">÷</button></td>
+					</tr>
+					<tr>
+						<td><button class="square" name="squareNum" value="7">7</button></td>
+						<td><button class="square" name="squareNum" value="8">8</button></td>
+						<td><button class="square" name="squareNum" value="9">9</button></td>
+						<td><button class="square" name="square" value="×">×</button></td>
+					</tr>
+					<tr>
+						<td><button class="square" name="squareNum" value="4">4</button></td>
+						<td><button class="square" name="squareNum" value="5">5</button></td>
+						<td><button class="square" name="squareNum" value="6">6</button></td>
+						<td><button class="square" name="square" value="－">－</button></td>
+					</tr>
+					<tr>
+						<td><button class="square" name="squareNum" value="1">1</button></td>
+						<td><button class="square" name="squareNum" value="2">2</button></td>
+						<td><button class="square" name="squareNum" value="3">3</button></td>
+						<td><button class="square" name="square" value="＋">＋</button></td>
+					</tr>
+					<tr>
+						<td><button class="square" name="squareNum" value="0">0</button></td>
+						<td><button class="square" name="square" value="．">．</button></td>
+						<td><button class="square" name="square" value="＝">＝</button></td>
+						<td><button class="square" name="square" value="Ｃ">Ｃ</button></td>
+					</tr>
+				</table>
+			</div>
+
+    </form>
+{% endblock %}
